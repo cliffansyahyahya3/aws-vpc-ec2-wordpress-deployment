@@ -1,45 +1,24 @@
-
-''' ROOT: AWS Cloud Infrastructure Deployment
-│
-├── 🔹 Networking (The Foundation)
-│   ├── VPC: "YAHYA_VPC" (10.0.0.0/16)
-│   │   ├── [Screenshot: vpc-configuration.png]
-│   │   └── Role: Provides an isolated private network.
-│   │
-│   ├── Subnets (Traffic Isolation)
-│   │   ├── Yahya Public Subnet 1 (10.0.1.0/24)
-│   │   │   ├── [Screenshot: route-table-association.png]
-│   │   │   └── Role: Hosts the web-facing WordPress instance.
-│   │   └── YAHYA Private Subnet (10.0.2.0/24)
-│   │       └── Role: Security layer for databases/internal resources.
-│   │
-│   └── Connectivity (The Gateway)
-│       ├── Internet Gateway: "YAHYA_IG"
-│       │   ├── [Screenshot: internet-gateway-setup.png]
-│       │   └── Role: Allows the VPC to communicate with the internet.
-│       └── Route Tables
-│           └── Role: Maps the Public Subnet to the Internet Gateway.
-│
-├── 🔹 Compute (The Application)
-│   ├── EC2 Instance: "WordPress" (t2.micro)
-│   │   ├── [Screenshot: ec2-wordpress-instance.png]
-│   │   ├── Region: us-west-1c (N. California)
-│   │   └── Status: 2/2 Health Checks Passed
-│   │
-│   └── Networking Properties
-│       ├── Public IPv4: 18.144.72.24
-│       └── Private IP: 172.31.18.88
-│
-└── 🔹 Security (The Firewall)
-    └── Security Groups
-        ├── Inbound: Port 80 (HTTP) - Web Traffic
-        └── Inbound: Port 22 (SSH) - Admin Access'''
-
 Project Overview
 
 This project demonstrates the manual configuration of a secure, production-ready cloud network on AWS. 
 I moved beyond default settings to architect a Custom Virtual Private Cloud (VPC) with tiered subnets, 
 ensuring high security and controlled traffic flow for a WordPress web server.
+
+AWS Custom VPC Project
+├── 🌐 Networking Layer
+│   ├── VPC: YAHYA_VPC (10.0.0.0/16)
+│   ├── Internet Gateway: YAHYA_IG
+│   └── Subnets
+│       ├── Yahya Public Subnet 1 (10.0.1.0/24)
+│       └── YAHYA Private Subnet (10.0.2.0/24)
+│
+├── ⚙️ Routing & Connectivity
+│   └── Public Route Table: Connected to YAHYA_IG
+│
+└── 💻 Compute Layer
+    └── EC2 Instance: WordPress (t2.micro)
+        ├── Status: 2/2 Health Checks Passed
+        └── Security: Port 80 (HTTP) & Port 22 (SSH) Enabled
 
 Skills & Technologies Demonstrated
 
