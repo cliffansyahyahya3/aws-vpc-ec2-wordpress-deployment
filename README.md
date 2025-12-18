@@ -5,20 +5,20 @@ I moved beyond default settings to architect a Custom Virtual Private Cloud (VPC
 ensuring high security and controlled traffic flow for a WordPress web server.
 
 AWS Custom VPC Project
-├── 🌐 Networking Layer
-│   ├── VPC: YAHYA_VPC (10.0.0.0/16)
-│   ├── Internet Gateway: YAHYA_IG
-│   └── Subnets
-│       ├── Yahya Public Subnet 1 (10.0.1.0/24)
-│       └── YAHYA Private Subnet (10.0.2.0/24)
-│
-├── ⚙️ Routing & Connectivity
-│   └── Public Route Table: Connected to YAHYA_IG
-│
-└── 💻 Compute Layer
-    └── EC2 Instance: WordPress (t2.micro)
-        ├── Status: 2/2 Health Checks Passed
-        └── Security: Port 80 (HTTP) & Port 22 (SSH) Enabled
+Networking Layer
+ - VPC: YAHYA_VPC (10.0.0.0/16)
+ - Internet Gateway: YAHYA_IG
+ - Subnets
+    - Yahya Public Subnet 1 (10.0.1.0/24)
+    - YAHYA Private Subnet (10.0.2.0/24)
+      
+Routing & Connectivity
+  - Public Route Table: Connected to YAHYA_IG
+
+Compute Layer
+  - EC2 Instance: WordPress (t2.micro)
+    -  Status: 2/2 Health Checks Passed
+    -  Security: Port 80 (HTTP) & Port 22 (SSH) Enabled
 
 Skills & Technologies Demonstrated
 
